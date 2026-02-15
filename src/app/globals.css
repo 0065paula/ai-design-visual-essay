@@ -20,7 +20,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Safety net: reveal hidden content if JS hasn't loaded after 3s */
+/* Safety net: reveal hidden content if JS hasn't loaded after 1s */
 @keyframes fm-reveal-fallback {
   to {
     opacity: 1 !important;
@@ -28,15 +28,16 @@ html {
   }
 }
 
-main [style*="opacity:0"],
-main [style*="opacity: 0"] {
-  animation: fm-reveal-fallback 0.6s ease-out 3s forwards;
+/* Aggressive fallback - apply to all elements with opacity:0 inline styles */
+[style*="opacity:0"],
+[style*="opacity: 0"] {
+  animation: fm-reveal-fallback 0.5s ease-out 1s forwards !important;
 }
 
-/* Once JS loads and adds this class, cancel the fallback animation */
-html.js-ready main [style*="opacity:0"],
-html.js-ready main [style*="opacity: 0"] {
-  animation: none;
+/* Once JS loads and Framer Motion takes over, cancel the fallback */
+html[data-framer-motion] [style*="opacity:0"],
+html[data-framer-motion] [style*="opacity: 0"] {
+  animation: none !important;
 }
 
 body {

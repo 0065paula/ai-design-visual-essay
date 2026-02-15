@@ -189,7 +189,8 @@ function CrisisSection() {
   });
   
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  // Removed scroll-based opacity - causes mobile visibility issues
+  // const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
     <section
@@ -198,7 +199,7 @@ function CrisisSection() {
       className="relative min-h-[100dvh] flex items-center py-20 sm:py-32"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-        <motion.div style={{ opacity }} className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           <div>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -277,7 +278,7 @@ function CrisisSection() {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
