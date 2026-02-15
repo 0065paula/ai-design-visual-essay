@@ -4,6 +4,63 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ChevronDown, Sparkles, Eye, Brain, Heart, Compass, ArrowRight } from "lucide-react";
 
+// Motion Safe Wrapper - ensures content is visible even if Framer Motion fails on mobile Safari
+function MotionSafe({ 
+  children, 
+  className = "",
+  delay = 0,
+  ...props 
+}: { 
+  children: React.ReactNode; 
+  className?: string;
+  delay?: number;
+  [key: string]: any;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Safety timeout: if animation hasn't triggered in 1s, show content anyway
+    const safetyTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    // Use Intersection Observer as more reliable fallback
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          clearTimeout(safetyTimer);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05, rootMargin: "100px" }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      clearTimeout(safetyTimer);
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.6, delay: delay * 0.1, ease: "easeOut" }}
+      className={className}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 // Navigation Component
 function Navigation() {
   const [activeSection, setActiveSection] = useState("hero");

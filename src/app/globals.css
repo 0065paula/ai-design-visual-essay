@@ -20,41 +20,23 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Safety net: ensure all content is visible on mobile Safari */
-/* Framer Motion's whileInView can fail on mobile, so we override with high specificity */
+/* 
+ * MOBILE SAFARI FIX:
+ * Content starts visible, animations enhance it.
+ * This prevents the "invisible content" bug where whileInView fails.
+ */
 
-/* Override all opacity:0 inline styles */
+/* Base: Ensure all content is visible by default */
 [style*="opacity:0"],
 [style*="opacity: 0"] {
   opacity: 1 !important;
 }
 
-/* Override transform animations that might hide content */
-[style*="transform:translateY("],
-[style*="transform: translateY("] {
-  transform: none !important;
-}
-
-/* Ensure all motion.div content is visible */
-[class*="motion"] {
-  opacity: 1 !important;
-}
-
-/* Add subtle fade-in animation for section content */
-@keyframes gentle-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apply gentle animation to section content */
-section > div > div {
-  animation: gentle-fade-in 0.6s ease-out 0.2s both;
+/* Override: Allow transforms for non-translateY animations (like floating particles) */
+[style*="rotate("],
+[style*="scale("] {
+  opacity: unset !important;
+  transform: unset !important;
 }
 
 body {
@@ -152,18 +134,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Section Transitions */
-.section-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.section-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Particle Grid Background */
