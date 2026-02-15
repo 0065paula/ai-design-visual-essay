@@ -21,21 +21,26 @@ html {
 }
 
 /* Safety net: ensure all content is visible on mobile Safari */
-/* Framer Motion's whileInView can fail on mobile, so we default to visible */
+/* Framer Motion's whileInView can fail on mobile, so we override with high specificity */
+
+/* Override all opacity:0 inline styles */
 [style*="opacity:0"],
 [style*="opacity: 0"] {
   opacity: 1 !important;
 }
 
-/* Disable transform animations that might cause visibility issues */
-[style*="transform:translateY(30px)"],
-[style*="transform:translateY(40px)"],
-[style*="transform:translateX(-30px)"],
-[style*="transform:translateX(30px)"] {
+/* Override transform animations that might hide content */
+[style*="transform:translateY("],
+[style*="transform: translateY("] {
   transform: none !important;
 }
 
-/* Add subtle fade-in animation for all elements */
+/* Ensure all motion.div content is visible */
+[class*="motion"] {
+  opacity: 1 !important;
+}
+
+/* Add subtle fade-in animation for section content */
 @keyframes gentle-fade-in {
   from {
     opacity: 0;
