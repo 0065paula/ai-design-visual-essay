@@ -26,6 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className="dark">
+      <head>
+        {/* Fallback: if JS fails to load, make framer-motion hidden content visible */}
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: `
+            [style*="opacity:0"], [style*="opacity: 0"] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+          `}} />
+        </noscript>
+      </head>
       <body
         className={`${cormorant.variable} ${inter.variable} antialiased bg-[#1a1a1a] text-[#f5f5f0]`}
       >

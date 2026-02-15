@@ -683,6 +683,11 @@ function Footer() {
 
 // Main Page Component
 export default function VisualEssay() {
+  // Signal that JS has loaded — cancels CSS fallback animation
+  useEffect(() => {
+    document.documentElement.classList.add("js-ready");
+  }, []);
+
   return (
     <main className="relative">
       <ProgressBar />
