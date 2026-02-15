@@ -4,7 +4,6 @@
   --background: #1a1a1a;
   --foreground: #f5f5f0;
   --accent: #c9a961;
-  --accent-dim: rgba(201, 169, 97, 0.1);
 }
 
 @theme inline {
@@ -15,6 +14,7 @@
   --font-sans: var(--font-inter);
 }
 
+/* Base styles */
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -25,36 +25,186 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* Editorial Typography System */
+
+/* Main title - Hero */
+.editorial-title {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #f5f5f0;
 }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
+/* Lead paragraph */
+.editorial-lead {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(245, 245, 240, 0.6);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
+/* Section heading */
+.editorial-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #f5f5f0;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #c9a961;
+/* Section subheading */
+.editorial-subheading {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(245, 245, 240, 0.5);
 }
 
-/* Typography */
-.font-serif {
+/* Body text - main editorial content */
+.editorial-text {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  font-weight: 400;
+  line-height: 1.85;
+  color: rgba(245, 245, 240, 0.75);
+  margin-bottom: 1.75rem;
+}
+
+/* Drop cap for opening paragraphs */
+.drop-cap {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 4.5em;
+  font-weight: 300;
+  line-height: 0.8;
+  float: left;
+  padding-right: 0.15em;
+  padding-top: 0.1em;
+  color: #c9a961;
+}
+
+/* Section number styling */
+.section-number {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a961;
+}
+
+/* Pull quote styling */
+.pull-quote {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  color: rgba(245, 245, 240, 0.9);
+  margin: 3rem 0;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.pull-quote::before {
+  content: '"';
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(201, 169, 97, 0.3);
+  position: absolute;
+  top: -0.5rem;
+  left: -1rem;
   font-family: var(--font-cormorant), Georgia, serif;
 }
 
-.font-sans {
-  font-family: var(--font-inter), system-ui, sans-serif;
+/* Editorial layout containers */
+.editorial-section {
+  min-height: 100dvh;
+  padding: 6rem 1.5rem;
 }
 
-/* Gradient Text */
+@media (min-width: 640px) {
+  .editorial-section {
+    padding: 8rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-section {
+    padding: 10rem 6rem;
+  }
+}
+
+.editorial-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Grid for main content + aside */
+.editorial-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .editorial-grid {
+    grid-template-columns: 1fr 16rem;
+    gap: 6rem;
+  }
+}
+
+.editorial-main {
+  max-width: 42rem;
+}
+
+.editorial-aside {
+  font-size: 0.875rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 245, 240, 0.1);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 169, 97, 0.4);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(201, 169, 97, 0.3);
+  color: #f5f5f0;
+}
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #c9a961, #f5f5f0);
+  z-index: 100;
+  transform-origin: 0%;
+}
+
+/* Gradient text utility */
 .gradient-text {
   background: linear-gradient(135deg, #f5f5f0 0%, #c9a961 100%);
   -webkit-background-clip: text;
@@ -62,42 +212,15 @@ body {
   background-clip: text;
 }
 
-/* Particle Grid Background */
-.particle-grid {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(201, 169, 97, 0.15) 1px, transparent 0);
-  background-size: 40px 40px;
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid #c9a961;
+  outline-offset: 2px;
 }
 
-/* Glass Effect */
-.glass {
-  background: rgba(26, 26, 26, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(201, 169, 97, 0.1);
-}
-
-/* Accent Border */
-.accent-border {
-  border-left: 2px solid #c9a961;
-}
-
-/* Hover Effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Reading Progress Bar */
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #c9a961, #f5f5f0);
-  z-index: 100;
-  transition: width 0.1s ease-out;
+/* Smooth transitions for interactive elements */
+button,
+a {
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
