@@ -20,24 +20,36 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Safety net: reveal hidden content if JS hasn't loaded after 1s */
-@keyframes fm-reveal-fallback {
+/* Safety net: ensure all content is visible on mobile Safari */
+/* Framer Motion's whileInView can fail on mobile, so we default to visible */
+[style*="opacity:0"],
+[style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+/* Disable transform animations that might cause visibility issues */
+[style*="transform:translateY(30px)"],
+[style*="transform:translateY(40px)"],
+[style*="transform:translateX(-30px)"],
+[style*="transform:translateX(30px)"] {
+  transform: none !important;
+}
+
+/* Add subtle fade-in animation for all elements */
+@keyframes gentle-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
   to {
-    opacity: 1 !important;
-    transform: none !important;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Aggressive fallback - apply to all elements with opacity:0 inline styles */
-[style*="opacity:0"],
-[style*="opacity: 0"] {
-  animation: fm-reveal-fallback 0.5s ease-out 1s forwards !important;
-}
-
-/* Once JS loads and Framer Motion takes over, cancel the fallback */
-html[data-framer-motion] [style*="opacity:0"],
-html[data-framer-motion] [style*="opacity: 0"] {
-  animation: none !important;
+/* Apply gentle animation to section content */
+section > div > div {
+  animation: gentle-fade-in 0.6s ease-out 0.2s both;
 }
 
 body {
