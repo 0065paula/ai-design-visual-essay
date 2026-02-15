@@ -128,16 +128,16 @@ function HeroSection() {
 
       <motion.div
         style={{ y: y1, opacity }}
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          className="mb-4 sm:mb-6"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#c9a961]/30 text-[#c9a961] text-sm tracking-widest uppercase">
-            <Sparkles className="w-4 h-4" />
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#c9a961]/30 text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             Visual Essay
           </span>
         </motion.div>
@@ -146,7 +146,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-8"
+          className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-6 sm:mb-8"
         >
           <span className="gradient-text">AI 时代</span>
           <br />
@@ -157,7 +157,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-sans text-lg md:text-xl text-[#f5f5f0]/60 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="font-sans text-base sm:text-lg md:text-xl text-[#f5f5f0]/60 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-2 sm:px-0"
         >
           从危机到融合，探索人工智能如何重新定义设计实践、审美价值与人类创造力的边界
         </motion.p>
@@ -168,7 +168,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 1 }}
           className="animate-bounce"
         >
-          <ChevronDown className="w-6 h-6 mx-auto text-[#c9a961]/60" />
+          <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 mx-auto text-[#c9a961]/60" />
         </motion.div>
       </motion.div>
 
@@ -193,19 +193,19 @@ function CrisisSection() {
     <section
       id="crisis"
       ref={ref}
-      className="relative min-h-screen flex items-center py-32"
+      className="relative min-h-screen flex items-center py-20 sm:py-32"
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        <motion.div style={{ opacity }} className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <motion.div style={{ opacity }} className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           <div>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-6 sm:mb-8"
             >
-              <span className="text-[#c9a961] text-sm tracking-widest uppercase font-sans">
+              <span className="text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase font-sans">
                 01 / 危机
               </span>
             </motion.div>
@@ -215,7 +215,7 @@ function CrisisSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8"
+              className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 sm:mb-8"
             >
               AI 没有制造危机
               <br />
@@ -227,9 +227,9 @@ function CrisisSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6 text-[#f5f5f0]/70 font-sans leading-relaxed"
+              className="space-y-4 sm:space-y-6 text-[#f5f5f0]/70 font-sans leading-relaxed text-sm sm:text-base"
             >
-              <p className="text-lg">
+              <p>
                 2024 年 Figma Config，Dylan Field 在 10,000 名设计师面前输入提示词：
                 <span className="text-[#f5f5f0] italic">"一个为中土世界可持续建筑师设计的个人作品集网站"</span>。
                 几秒钟后，完整的 UI 布局生成完毕。
@@ -240,20 +240,20 @@ function CrisisSection() {
                 人们大多数时候会选择那个。」
               </p>
 
-              <div className="accent-border pl-6 py-2 my-8">
-                <p className="text-xl text-[#f5f5f0] font-light">
+              <div className="accent-border pl-4 sm:pl-6 py-2 my-6 sm:my-8">
+                <p className="text-base sm:text-xl text-[#f5f5f0] font-light">
                   「如果 AI 能用文本提示完成你的工作，那你的工作到底是什么？」
                 </p>
               </div>
 
-              <p className="text-sm text-[#f5f5f0]/50">
+              <p className="text-xs sm:text-sm text-[#f5f5f0]/50">
                 — Dolphia, UX Collective, 2025
               </p>
             </motion.div>
           </div>
 
-          <motion.div style={{ y }} className="relative">
-            <div className="relative aspect-square max-w-md mx-auto">
+          <motion.div style={{ y }} className="relative order-first lg:order-last mb-8 lg:mb-0">
+            <div className="relative aspect-square max-w-[280px] sm:max-w-md mx-auto">
               {/* Abstract Representation of Crisis */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -263,15 +263,15 @@ function CrisisSection() {
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-8 border border-[#c9a961]/30 rounded-full"
+                className="absolute inset-8 sm:inset-12 border border-[#c9a961]/30 rounded-full"
               />
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-16 border border-[#c9a961]/40 rounded-full"
+                className="absolute inset-16 sm:inset-24 border border-[#c9a961]/40 rounded-full"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <Eye className="w-16 h-16 text-[#c9a961]/60" />
+                <Eye className="w-10 h-10 sm:w-16 sm:h-16 text-[#c9a961]/60" />
               </div>
             </div>
           </motion.div>
@@ -286,30 +286,30 @@ function DebateSection() {
   const [activeView, setActiveView] = useState<"victor" | "control" | null>(null);
 
   return (
-    <section id="debate" className="relative min-h-screen py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <section id="debate" className="relative min-h-screen py-20 sm:py-32">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
-          <span className="text-[#c9a961] text-sm tracking-widest uppercase font-sans">
+          <span className="text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase font-sans">
             02 / 争论
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mt-6 mb-8">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mt-4 sm:mt-6 mb-6 sm:mb-8">
             两种极端的<span className="text-[#c9a961]">碰撞</span>
           </h2>
-          <p className="text-[#f5f5f0]/60 font-sans max-w-2xl mx-auto">
+          <p className="text-[#f5f5f0]/60 font-sans max-w-2xl mx-auto text-sm sm:text-base">
             当 AI 足够强大时，我们还需要界面吗？
           </p>
         </motion.div>
 
         {/* Toggle */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex justify-center gap-3 sm:gap-4 mb-10 sm:mb-16">
           <button
             onClick={() => setActiveView("victor")}
-            className={`px-6 py-3 rounded-full border transition-all duration-300 font-sans text-sm ${
+            className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full border transition-all duration-300 font-sans text-xs sm:text-sm ${
               activeView === "victor"
                 ? "bg-[#c9a961] border-[#c9a961] text-[#1a1a1a]"
                 : "border-[#c9a961]/30 text-[#c9a961] hover:border-[#c9a961]"
@@ -319,7 +319,7 @@ function DebateSection() {
           </button>
           <button
             onClick={() => setActiveView("control")}
-            className={`px-6 py-3 rounded-full border transition-all duration-300 font-sans text-sm ${
+            className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full border transition-all duration-300 font-sans text-xs sm:text-sm ${
               activeView === "control"
                 ? "bg-[#c9a961] border-[#c9a961] text-[#1a1a1a]"
                 : "border-[#c9a961]/30 text-[#c9a961] hover:border-[#c9a961]"
@@ -330,24 +330,24 @@ function DebateSection() {
         </div>
 
         {/* Content */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
           {/* Victor View */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={`p-8 rounded-2xl border transition-all duration-500 ${
+            className={`p-5 sm:p-8 rounded-2xl border transition-all duration-500 ${
               activeView === "victor"
                 ? "border-[#c9a961] bg-[#c9a961]/5"
                 : "border-[#f5f5f0]/10 bg-[#f5f5f0]/5"
             }`}
             onClick={() => setActiveView("victor")}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <Brain className="w-6 h-6 text-[#c9a961]" />
-              <h3 className="font-serif text-2xl">界面是一种必要的恶</h3>
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a961]" />
+              <h3 className="font-serif text-lg sm:text-2xl">界面是一种必要的恶</h3>
             </div>
-            <ul className="space-y-4 text-[#f5f5f0]/70 font-sans">
+            <ul className="space-y-3 sm:space-y-4 text-[#f5f5f0]/70 font-sans text-sm sm:text-base">
               <li className="flex gap-3">
                 <span className="text-[#c9a961]">→</span>
                 屏幕是单用户的、封闭的、静态的媒介
@@ -365,8 +365,8 @@ function DebateSection() {
                 当 AI 足够强大时，为什么还需要固定界面？
               </li>
             </ul>
-            <div className="mt-6 pt-6 border-t border-[#f5f5f0]/10">
-              <p className="text-sm text-[#c9a961]">Bret Victor · Seeing Spaces</p>
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-[#f5f5f0]/10">
+              <p className="text-xs sm:text-sm text-[#c9a961]">Bret Victor · Seeing Spaces</p>
             </div>
           </motion.div>
 
@@ -376,18 +376,18 @@ function DebateSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className={`p-8 rounded-2xl border transition-all duration-500 ${
+            className={`p-5 sm:p-8 rounded-2xl border transition-all duration-500 ${
               activeView === "control"
                 ? "border-[#c9a961] bg-[#c9a961]/5"
                 : "border-[#f5f5f0]/10 bg-[#f5f5f0]/5"
             }`}
             onClick={() => setActiveView("control")}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <Compass className="w-6 h-6 text-[#c9a961]" />
-              <h3 className="font-serif text-2xl">没有界面，就没有控制</h3>
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a961]" />
+              <h3 className="font-serif text-lg sm:text-2xl">没有界面，就没有控制</h3>
             </div>
-            <ul className="space-y-4 text-[#f5f5f0]/70 font-sans">
+            <ul className="space-y-3 sm:space-y-4 text-[#f5f5f0]/70 font-sans text-sm sm:text-base">
               <li className="flex gap-3">
                 <span className="text-[#c9a961]">→</span>
                 可见性是信任的基础
@@ -405,8 +405,8 @@ function DebateSection() {
                 美学是功能的一部分，不是奢侈品
               </li>
             </ul>
-            <div className="mt-6 pt-6 border-t border-[#f5f5f0]/10">
-              <p className="text-sm text-[#c9a961]">Jakob Nielsen · UX 权威</p>
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-[#f5f5f0]/10">
+              <p className="text-xs sm:text-sm text-[#c9a961]">Jakob Nielsen · UX 权威</p>
             </div>
           </motion.div>
         </div>
@@ -418,16 +418,16 @@ function DebateSection() {
 // Scarcity Section
 function ScarcitySection() {
   return (
-    <section id="scarcity" className="relative min-h-screen py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="scarcity" className="relative min-h-screen py-20 sm:py-32 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <div className="relative aspect-[4/5] bg-gradient-to-br from-[#c9a961]/10 to-transparent rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/5] max-w-[300px] sm:max-w-none mx-auto bg-gradient-to-br from-[#c9a961]/10 to-transparent rounded-2xl overflow-hidden">
               {/* Abstract Art Representation */}
               <motion.div
                 animate={{ 
@@ -441,7 +441,7 @@ function ScarcitySection() {
                 className="absolute inset-0"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <Heart className="w-24 h-24 text-[#c9a961]/40" />
+                <Heart className="w-16 h-16 sm:w-24 sm:h-24 text-[#c9a961]/40" />
               </div>
             </div>
           </motion.div>
@@ -452,10 +452,10 @@ function ScarcitySection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-[#c9a961] text-sm tracking-widest uppercase font-sans">
+              <span className="text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase font-sans">
                 03 / 稀缺
               </span>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mt-6 mb-8 leading-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light mt-4 sm:mt-6 mb-6 sm:mb-8 leading-tight">
                 「平均」的
                 <br />
                 <span className="text-[#c9a961]">暴政</span>
@@ -467,9 +467,9 @@ function ScarcitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-6 text-[#f5f5f0]/70 font-sans leading-relaxed"
+              className="space-y-4 sm:space-y-6 text-[#f5f5f0]/70 font-sans leading-relaxed text-sm sm:text-base"
             >
-              <p className="text-lg text-[#f5f5f0]">
+              <p className="text-base sm:text-lg text-[#f5f5f0]">
                 AI 生成的设计有一个隐藏的特性：<span className="text-[#c9a961]">它是统计学意义上的平均</span>。
               </p>
 
@@ -479,8 +479,8 @@ function ScarcitySection() {
                 它生成的是<span className="italic">最大公约数</span>——不会冒犯任何人，也不会打动任何人。
               </p>
 
-              <div className="accent-border pl-6 py-4 my-8 bg-[#c9a961]/5">
-                <p className="text-xl text-[#f5f5f0] font-light font-serif">
+              <div className="accent-border pl-4 sm:pl-6 py-3 sm:py-4 my-6 sm:my-8 bg-[#c9a961]/5">
+                <p className="text-base sm:text-xl text-[#f5f5f0] font-light font-serif">
                   「美不是安全，美是冒险。」
                 </p>
               </div>
@@ -501,23 +501,23 @@ function ScarcitySection() {
 // Fusion Section
 function FusionSection() {
   return (
-    <section id="fusion" className="relative min-h-screen py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <section id="fusion" className="relative min-h-screen py-20 sm:py-32">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
-          <span className="text-[#c9a961] text-sm tracking-widest uppercase font-sans">
+          <span className="text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase font-sans">
             04 / 融合
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mt-6 mb-8">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mt-4 sm:mt-6 mb-6 sm:mb-8">
             混合形态的<span className="text-[#c9a961]">三种实现</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
           {[
             {
               title: "策展者模式",
@@ -544,24 +544,24 @@ function FusionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group p-8 rounded-2xl border border-[#f5f5f0]/10 bg-[#f5f5f0]/5 hover:border-[#c9a961]/50 transition-all duration-500 hover-lift"
+              className="group p-5 sm:p-8 rounded-2xl border border-[#f5f5f0]/10 bg-[#f5f5f0]/5 hover:border-[#c9a961]/50 transition-all duration-500 hover-lift"
             >
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <span className="text-[#c9a961]/60 text-xs tracking-widest uppercase font-sans">
                   {mode.subtitle}
                 </span>
-                <h3 className="font-serif text-2xl mt-2 group-hover:text-[#c9a961] transition-colors">
+                <h3 className="font-serif text-xl sm:text-2xl mt-2 group-hover:text-[#c9a961] transition-colors">
                   {mode.title}
                 </h3>
               </div>
-              <p className="text-[#f5f5f0]/60 font-sans text-sm leading-relaxed mb-6">
+              <p className="text-[#f5f5f0]/60 font-sans text-sm leading-relaxed mb-4 sm:mb-6">
                 {mode.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {mode.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 rounded-full bg-[#c9a961]/10 text-[#c9a961] text-xs font-sans"
+                    className="px-2 sm:px-3 py-1 rounded-full bg-[#c9a961]/10 text-[#c9a961] text-xs font-sans"
                   >
                     {skill}
                   </span>
@@ -578,25 +578,25 @@ function FusionSection() {
 // Action Section
 function ActionSection() {
   return (
-    <section id="action" className="relative min-h-screen py-32">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+    <section id="action" className="relative min-h-screen py-20 sm:py-32">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-[#c9a961] text-sm tracking-widest uppercase font-sans">
+          <span className="text-[#c9a961] text-xs sm:text-sm tracking-widest uppercase font-sans">
             05 / 行动
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mt-6 mb-8">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mt-4 sm:mt-6 mb-6 sm:mb-8">
             成为 AI 的<span className="text-[#c9a961]">导演</span>
           </h2>
-          <p className="text-[#f5f5f0]/60 font-sans text-lg max-w-2xl mx-auto mb-16">
+          <p className="text-[#f5f5f0]/60 font-sans text-base sm:text-lg max-w-2xl mx-auto mb-10 sm:mb-16">
             三个维度的具体行动路径
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-8">
           {[
             {
               title: "审美：从「看很多」到「看得深」",
@@ -629,12 +629,12 @@ function ActionSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="text-left p-8 rounded-2xl border border-[#f5f5f0]/10 bg-[#f5f5f0]/5"
+              className="text-left p-5 sm:p-8 rounded-2xl border border-[#f5f5f0]/10 bg-[#f5f5f0]/5"
             >
-              <h3 className="font-serif text-xl mb-4 text-[#c9a961]">{section.title}</h3>
+              <h3 className="font-serif text-lg sm:text-xl mb-3 sm:mb-4 text-[#c9a961]">{section.title}</h3>
               <ul className="space-y-2">
                 {section.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[#f5f5f0]/70 font-sans">
+                  <li key={item} className="flex items-center gap-3 text-[#f5f5f0]/70 font-sans text-sm sm:text-base">
                     <ArrowRight className="w-4 h-4 text-[#c9a961]/60 flex-shrink-0" />
                     {item}
                   </li>
@@ -650,13 +650,13 @@ function ActionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-20 pt-20 border-t border-[#f5f5f0]/10"
+          className="mt-16 sm:mt-20 pt-12 sm:pt-20 border-t border-[#f5f5f0]/10"
         >
-          <p className="font-serif text-2xl md:text-3xl text-[#f5f5f0]/80 mb-8">
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl text-[#f5f5f0]/80 mb-6 sm:mb-8">
             「当 AI 让「足够好」变得廉价时，<br />
             <span className="text-[#c9a961]">「有灵魂」变得珍贵。</span>」
           </p>
-          <p className="text-[#f5f5f0]/40 font-sans text-sm">
+          <p className="text-[#f5f5f0]/40 font-sans text-xs sm:text-sm">
             一场关于 Paula Meng 与 AI 的对话 · 2026
           </p>
         </motion.div>
@@ -668,9 +668,9 @@ function ActionSection() {
 // Footer
 function Footer() {
   return (
-    <footer className="py-12 border-t border-[#f5f5f0]/10">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-[#f5f5f0]/40 font-sans text-sm">
+    <footer className="py-8 sm:py-12 border-t border-[#f5f5f0]/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+        <p className="text-[#f5f5f0]/40 font-sans text-xs sm:text-sm text-center md:text-left">
           Visual Essay · AI 时代界面设计的未来
         </p>
         <p className="text-[#c9a961]/60 font-sans text-xs">
