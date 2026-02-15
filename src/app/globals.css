@@ -20,25 +20,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* 
- * MOBILE SAFARI FIX:
- * Content starts visible, animations enhance it.
- * This prevents the "invisible content" bug where whileInView fails.
- */
-
-/* Base: Ensure all content is visible by default */
-[style*="opacity:0"],
-[style*="opacity: 0"] {
-  opacity: 1 !important;
-}
-
-/* Override: Allow transforms for non-translateY animations (like floating particles) */
-[style*="rotate("],
-[style*="scale("] {
-  opacity: unset !important;
-  transform: unset !important;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -71,61 +52,6 @@ body {
 
 .font-sans {
   font-family: var(--font-inter), system-ui, sans-serif;
-}
-
-/* Animation Utilities */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.6;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 /* Gradient Text */
