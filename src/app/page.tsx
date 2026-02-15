@@ -95,16 +95,18 @@ function ProgressBar() {
 // Hero Section
 function HeroSection() {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const y1 = useTransform(scrollY, [0, 500], [0, 150]); // Reduced parallax distance
+  
+  // Removed opacity transform on scroll to fix mobile visibility issues
+  // const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden particle-grid"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden particle-grid"
     >
       {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-0">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -127,7 +129,7 @@ function HeroSection() {
       </div>
 
       <motion.div
-        style={{ y: y1, opacity }}
+        style={{ y: y1 }}
         className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto"
       >
         <motion.div
@@ -193,7 +195,7 @@ function CrisisSection() {
     <section
       id="crisis"
       ref={ref}
-      className="relative min-h-screen flex items-center py-20 sm:py-32"
+      className="relative min-h-[100dvh] flex items-center py-20 sm:py-32"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div style={{ opacity }} className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
@@ -286,7 +288,7 @@ function DebateSection() {
   const [activeView, setActiveView] = useState<"victor" | "control" | null>(null);
 
   return (
-    <section id="debate" className="relative min-h-screen py-20 sm:py-32">
+    <section id="debate" className="relative min-h-[100dvh] py-20 sm:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -418,7 +420,7 @@ function DebateSection() {
 // Scarcity Section
 function ScarcitySection() {
   return (
-    <section id="scarcity" className="relative min-h-screen py-20 sm:py-32 overflow-hidden">
+    <section id="scarcity" className="relative min-h-[100dvh] py-20 sm:py-32 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           <motion.div
@@ -501,7 +503,7 @@ function ScarcitySection() {
 // Fusion Section
 function FusionSection() {
   return (
-    <section id="fusion" className="relative min-h-screen py-20 sm:py-32">
+    <section id="fusion" className="relative min-h-[100dvh] py-20 sm:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -578,7 +580,7 @@ function FusionSection() {
 // Action Section
 function ActionSection() {
   return (
-    <section id="action" className="relative min-h-screen py-20 sm:py-32">
+    <section id="action" className="relative min-h-[100dvh] py-20 sm:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
