@@ -263,7 +263,25 @@ function CrisisSection() {
           <div className="editorial-main">
             <Reveal delay={100}>
               <EditorialParagraph dropCap>
-                2024 年 Figma Config，Dylan Field 在 10,000 名设计师面前输入提示词：「一个为中土世界可持续建筑师设计的个人作品集网站」。几秒钟后，完整的 UI 布局生成完毕。设计师 Sebastiaan de With 写道：「如果某人可以一键生成那张海报，人们大多数时候会选择那个。」
+                2024 年{" "}
+                <a 
+                  href="https://www.figma.com/blog/whats-happening-at-config-2024/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#c9a961] hover:underline underline-offset-4"
+                >
+                  Figma Config
+                </a>
+                ，Dylan Field 在 10,000 名设计师面前输入提示词：「一个为中土世界可持续建筑师设计的个人作品集网站」。几秒钟后，完整的 UI 布局生成完毕。设计师{" "}
+                <a 
+                  href="https://medium.com/@dolphia.n.arnstein" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#c9a961] hover:underline underline-offset-4"
+                >
+                  Sebastiaan de With
+                </a>
+                {" "}写道：「如果某人可以一键生成那张海报，人们大多数时候会选择那个。」
               </EditorialParagraph>
             </Reveal>
 
@@ -284,7 +302,14 @@ function CrisisSection() {
             <div className="sticky top-32">
               <p className="text-sm text-[#f5f5f0]/40 font-sans tracking-wider uppercase mb-2">Reference</p>
               <p className="text-sm text-[#f5f5f0]/60 font-sans italic">
-                Dolphia, UX Collective, 2025
+                <a 
+                  href="https://uxdesign.cc/why-ai-is-exposing-designs-craft-crisis-434bcb652848" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#c9a961] transition-colors"
+                >
+                  Dolphia, UX Collective, 2025
+                </a>
               </p>
             </div>
           </Reveal>
@@ -335,7 +360,17 @@ function DebateSection() {
                 <EditorialParagraph className="text-[#f5f5f0]/80">
                   屏幕是单用户的、封闭的、静态的媒介。真正的理解需要看到系统内部、跨越时间。我们被困在「手指触摸玻璃」的贫乏想象中。当 AI 足够强大时，为什么还需要固定界面？
                 </EditorialParagraph>
-                <p className="text-xs text-[#f5f5f0]/40 font-sans tracking-wider mt-8">— Bret Victor · Seeing Spaces</p>
+                <p className="text-xs text-[#f5f5f0]/40 font-sans tracking-wider mt-8">
+                  —{" "}
+                  <a 
+                    href="https://worrydream.com/SeeingSpaces/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-[#c9a961] transition-colors"
+                  >
+                    Bret Victor · Seeing Spaces
+                  </a>
+                </p>
               </div>
             </div>
           </Reveal>
@@ -347,7 +382,17 @@ function DebateSection() {
                 <EditorialParagraph className="text-[#f5f5f0]/80">
                   可见性是信任的基础。语言是模糊的，界面是精确的。用户失去了心智模型，无法预测失败。美学是功能的一部分，不是奢侈品。
                 </EditorialParagraph>
-                <p className="text-xs text-[#f5f5f0]/40 font-sans tracking-wider mt-8">— Jakob Nielsen · UX 权威</p>
+                <p className="text-xs text-[#f5f5f0]/40 font-sans tracking-wider mt-8">
+                  —{" "}
+                  <a 
+                    href="https://www.nngroup.com/people/jakob-nielsen/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-[#c9a961] transition-colors"
+                  >
+                    Jakob Nielsen · UX 权威
+                  </a>
+                </p>
               </div>
             </div>
           </Reveal>
